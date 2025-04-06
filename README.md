@@ -1,2 +1,2 @@
-# Project-1
+# Django project-1
 Ac &amp; Fridge service booking website
