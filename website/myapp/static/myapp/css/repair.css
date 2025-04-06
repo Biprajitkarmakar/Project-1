@@ -1,0 +1,148 @@
+
+.about-banner {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-color: #021235;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.white-head{
+    color: white;
+}
+
+p{
+    padding-bottom: 20px;
+}
+
+/* Overlay Effect */
+.about-banner .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+}
+
+/* Heading */
+.about-banner h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* Breadcrumb */
+.about-banner p {
+    font-size: 18px;
+    margin-top: 8px;
+}
+
+/* Breadcrumb Links */
+.about-banner p a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.about-banner p a:hover {
+    color: #f97900; 
+}
+
+.about-banner p a.active {
+    color:#f97900; 
+}
+
+
+.container {
+    margin: auto;
+    padding: 80px;
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.text, .image {
+    flex: 1;
+    padding: 20px;
+}
+
+.image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+h1, h2 {
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    color: white;
+}
+
+.highlight {
+    font-weight: bold;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+}
+
+.service-list li {
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    background: #0c1549;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #e64a19;
+}
+
+.icon-text {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+@media (max-width: 800px) {
+    .section {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        padding: 50px;
+    }
+}
+
+/* footer */
+.footer p{
+    color: white;
+}
+.footer-name{
+    color: white;
+}
+.end-text{
+    color: white;
+}

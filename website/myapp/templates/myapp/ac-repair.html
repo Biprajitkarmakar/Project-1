@@ -1,0 +1,63 @@
+{% load static %}
+{%include './navbar.html'%}
+{% block link %}
+<link rel="stylesheet" href="{% static 'myapp/css/repair.css' %}">
+{% endblock %}
+{% block title %}
+<title>AC Repair Page</title>
+{% endblock %}
+    
+    <!-- ac repair & service  -->
+    <section class="about-banner">
+        <div class="overlay">
+            <h1 class="white-head">AC Repair & Services</h1>
+            <p><a href="{%url "homepage"%}">Home</a> / <a href="{%url "servicepage"%}">Services</a> / <a href="{%url "ac-servicepage"%}" class="active">Book AC Repair Service</a></p>
+        </div>
+    </section>
+<!-- why choose us -->
+<div class="container">
+    <h1>Air Conditioner Repair at Home</h1>
+    <p>Welcome to Mr.Cool, your go-to destination for reliable and professional AC repair and service.</p>
+
+    <div class="section">
+        <div class="text">
+            <h2>Why Choose Mr.Cool for Your AC Needs?</h2>
+            <p><span class="highlight">Expert Technicians:</span> Our technicians are well-trained to handle a wide range of AC models.</p>
+            <p><span class="highlight">Comprehensive Services:</span> We provide routine maintenance, urgent repairs, and installation services.</p>
+            <p><span class="highlight">Customer-Centric Approach:</span> We ensure hassle-free services, keeping your comfort as our priority.</p>
+            <a href="{%url "bookingpage"%}" class="btn">Book Service</a>
+        </div>
+        <div class="image">
+            <img src="{% static 'myapp\images\ac service.jpg' %}" alt="AC Technician">
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="image">
+            <img src="{% static 'myapp\images\ac repair.jpg' %}" alt="AC Repair Process">
+        </div>
+        <div class="text">
+            <h2>Our AC Repair Process</h2>
+            <ul class="service-list">
+                <li><span class="highlight">Thorough Inspection:</span> Identifying issues and potential improvements.</li>
+                <li><span class="highlight">Diagnostics:</span> Using advanced tools to pinpoint malfunctions.</li>
+                <li><span class="highlight">Transparent Communication:</span> We explain issues and costs before proceeding.</li>
+                <li><span class="highlight">Quality Repairs:</span> We use genuine parts for reliable repairs.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>AC Brands We Repair</h2>
+    <p>Mr.Cool specializes in servicing a multitude of AC brands, including:</p>
+    <ul class="service-list">
+        <li><span class="highlight">LG:</span> Known for innovation and energy efficiency.</li>
+        <li><span class="highlight">Samsung:</span> Cutting-edge technology for precision maintenance.</li>
+        <li><span class="highlight">Whirlpool:</span> Durable and reliable AC models.</li>
+        <li><span class="highlight">Godrej:</span> High-quality ACs with meticulous maintenance.</li>
+        <li><span class="highlight">Haier:</span> Sleek design and advanced features.</li>
+        <li><span class="highlight">Hitachi:</span> Excellence in air conditioning.</li>
+    </ul>
+    <p>We provide AC repair services in Kolkata , Barrackpore , Kanchrapara , Kalyani , Sodepur , Krishnanagar , Chakdah and Mayapur.</p>
+    <a href="{%url "bookingpage"%}" class="btn">Book Service</a>
+</div>
+{% include './footer.html'%}

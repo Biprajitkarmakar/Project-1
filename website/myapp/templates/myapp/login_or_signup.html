@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login or Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+        }
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+        }
+        .login { background: #007bff; }
+        .signup { background: #007bff; }
+        .back { background: #0c1549; }
+
+        a:hover {
+            background: #e64a19;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>You must be logged in to book a service</h2>
+        <p>Please log in or sign up to continue.</p>
+        <a href="{% url 'signinpage' %}" class="login">Log In</a>
+        <a href="{% url 'signuppage' %}" class="signup">Sign Up</a> 
+    </div>
+    <a href="{% url 'servicepage' %}" class="back">← Back</a>
+
+</body>
+</html>

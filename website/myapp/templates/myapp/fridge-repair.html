@@ -1,0 +1,65 @@
+{% load static %}
+{%include './navbar.html'%}
+{% block link %}
+<link rel="stylesheet" href="{% static 'myapp/css/repair.css' %}">
+{% endblock %}
+{% block title %}
+<title>Fridge Repair Page</title>
+{% endblock %}
+    
+    <!-- Fridge repair & service  -->
+    <section class="about-banner">
+        <div class="overlay">
+            <h1 class="white-head">Refrigerator Repair & Service
+
+            </h1>
+            <p><a href="{%url "homepage"%}">Home</a> / <a href="{%url "servicepage"%}">Services</a> / <a href="{%url "ac-servicepage"%}" class="active">Book Fridge Repair Service</a></p>
+        </div>
+    </section>
+<!-- why choose us -->
+<div class="container">
+    <h1>Refrigerator Repair at Home</h1>
+    <p>Welcome to Mr.Cool, your dedicated partner in refrigerator repair services. With a commitment to excellence, we bring you specialized solutions to keep your refrigerators running efficiently. Trust Mr.Cool for reliable services, expert technicians, and a focus on ensuring the longevity of your valuable appliances.</p>
+
+    <div class="section">
+        <div class="text">
+            <h2>Why Choose Mr. Repair for Your Refrigerator Repairs?</h2>
+            <p><span class="highlight">Expert Technicians:</span>Our team of skilled technicians is well-versed in handling a variety of refrigerator brands. They undergo continuous training to stay updated on the latest technologies, ensuring expert diagnoses and effective repairs.</p>
+            <p><span class="highlight">Comprehensive Services:</span> Whether it's a minor glitch, a major malfunction, or routine maintenance, Mr.Cool offers comprehensive services for both residential and commercial refrigerators. We understand the importance of a fully functional refrigerator in your daily life.</p>
+            <p><span class="highlight">Customer-Centric Approach:</span>At Mr.Cool, we understand the inconvenience a malfunctioning refrigerator can cause. Our team strives to provide prompt and hassle-free services, keeping your perishables fresh and your daily routine uninterrupted.</p>
+            <a href="{%url "bookingpage"%}" class="btn">Book Service</a>
+        </div>
+        <div class="image">
+            <img src="{% static 'myapp\images\fridge repair.jpg' %}" alt="AC Technician">
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="image">
+            <img src="{% static 'myapp\images\fridge-service.jpg' %}" alt="AC Repair Process">
+        </div>
+        <div class="text">
+            <h2>Our Refrigerator Repair Process</h2>
+            <ul class="service-list">
+                <li><span class="highlight">Thorough Inspection:</span> Our technicians initiate each service with a thorough inspection, identifying issues and potential areas for improvement.</li>
+                <li><span class="highlight">Diagnostics:</span>Using cutting-edge diagnostic tools, we pinpoint the root cause of refrigerator malfunctions, ensuring an accurate and efficient repair process.</li>
+                <li><span class="highlight">Transparent Communication:</span>Mr. Repair prioritizes transparent communication. Our technicians explain identified issues, proposed solutions, and associated costs before commencing any repairs</li>
+                <li><span class="highlight">Quality Repairs:</span>Count on Mr.Cool for delivering quality repairs using genuine parts, ensuring the longevity and reliability of your refrigerator.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Refrigerator Brands We Service</h2>
+    <p>Mr. Repair specializes in servicing a wide array of refrigerator brands, including but not limited to:</p>
+    <ul class="service-list">
+        <li><span class="highlight">LG:</span> Renowned for innovation and energy efficiency, LG refrigerators receive meticulous care from our skilled technicians.</li>
+        <li><span class="highlight">Samsung:</span>With cutting-edge technology, Samsung refrigerators require precise maintenance, a specialty of Mr.Cool.</li>
+        <li><span class="highlight">Whirlpool:</span>  Known for durability and performance, Whirlpool refrigerators benefit from our detailed service approach.</li>
+        <li><span class="highlight">Godrej:</span> Trusted for quality, Godrej refrigerators receive expert attention to ensure their reliability.</li>
+        <li><span class="highlight">Haier:</span> With sleek designs and advanced features, Haier refrigerators are in capable hands with Mr.Cool.</li>
+        <li><span class="highlight">Hitachi:</span> A brand synonymous with quality, Hitachi refrigerators undergo top-tier maintenance and repairs.</li>
+    </ul>
+    <p>We provide AC repair services in Kolkata , Barrackpore , Kanchrapara , Kalyani , Sodepur , Krishnanagar , Chakdah and Mayapur.</p>
+    <a href="{%url "bookingpage"%}" class="btn">Book Service</a>
+</div>
+{% include './footer.html'%}

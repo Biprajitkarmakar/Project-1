@@ -1,0 +1,60 @@
+{%include './navbar.html'%}
+{% block title %}
+<title>Welcome Page</title>
+{% endblock %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .auth-container {
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            font-size: 16px;
+        }
+        .auth-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #0c1549;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .auth-button:hover {
+            background: #e64a19;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="auth-container">
+        <h2>Welcome!</h2>
+        <p>Sign in or sign up to get the best experience on our platform.</p>
+        <a href="{%url "signinpage"%}" class="auth-button">Login</a>
+        <a href="{%url "signuppage"%}" class="auth-button">Sign Up</a>
+    </div>
+</body>
+</html>

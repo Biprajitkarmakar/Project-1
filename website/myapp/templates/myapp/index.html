@@ -1,0 +1,120 @@
+{% load static %}
+{% include './navbar.html' %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+{% endblock %}
+{% block title %}
+<title>Mr.Cool Home</title>
+{% endblock %}
+<!-- image slideshow--> 
+<div class="slideshow-container">
+    <div class="slide">
+        <img src="{% static 'myapp/images/ac repair.jpg' %}" alt="AC Service">
+        <div class="slide-text">
+            <h2>AC Repair Services</h2>
+            <p>Fast & Reliable AC Repair at Your Doorstep</p>
+            <a href="{%url "ac-servicepage"%}" class="book-btn">Book Service</a>
+        </div>
+    </div>
+    <div class="slide">
+        <img src="{% static 'myapp/images/fridge-service.jpg' %}" alt="Fridge Service">
+        <div class="slide-text">
+            <h2>Fridge Repair Services</h2>
+            <p>Expert Technicians for Fridge Repairs</p>
+            <a href="{%url "fridge-servicepage"%}" class="book-btn">Book Service</a>
+        </div>
+    </div>
+</div>
+<!--about us-->
+<div class="main-about">
+<div class="about">
+    <div class="about-head">
+    <h2 class="title">Mr.Cool - Best Cooling Service Center</h2>
+    </div>
+<div class="tecnician">  
+        <div class="tecnician-text">
+            <img src="{% static 'myapp/logo/expert-tecnician.svg' %}" alt="technician" class="tecnician-icon">
+            <h3>Expert Technicians</h3>
+        </div>
+    <div class="quality-text">
+        <img src="{% static 'myapp/logo/repairing-service.svg' %}" alt="quality" class="quality-icon">
+        <h3>Quality Service</h3>
+    </div>   
+</div>
+    <div class="about-text">
+        <p>Greetings from Mr.Cool, your dependable home appliance repair partner! We take pride in being your go-to choice for all appliance repairs in your home after providing devoted service for more than 5 years. Our mission was to make sure our customers' appliances functioned flawlessly in order to restore their smiles.</p>
+    </div>
+    <div class="contact">
+        <div class="number">
+            <img src="{% static 'myapp/logo/call-vector-icon.svg' %}" alt="phone" class="phone-icon">
+            <h4>1234567890</h4>
+        </div>
+        <div class="email">
+            <img src="{% static 'myapp/logo/email logo.svg' %}" alt="email" class="email-icon">
+            <h4>mrcoolpvtltd2025@gmail.com</h4>
+        </div>
+    </div>
+</div>
+<div class="about-image">
+    <img src="{% static 'myapp/images/repair men.jpg'%}" alt="technician" class="about-img">
+</div>
+</div>
+<!--why choose us-->
+<div class="choose-us">
+    <div class="choose-content">
+        <div class="title-h">
+            <h2 class="title">Why Choose Us?</h2>
+        </div>
+        <div class="why">
+            <p>Our area of expertise is fixing a broad variety of household appliances, such as air conditioners, ovens, and washing machines, among others. For our knowledgeable technicians, no task is too big or too small. We approach every repair with accuracy using our comprehensive knowledge and practical experience to make sure your appliances function properly.</p>
+        </div>
+        <div class="choose">
+            <img src="{% static 'myapp/logo/trusted service.svg'%}" alt="quality" class="choose-icon">
+          <div class="text">  
+            <h3>Trusted Service Center</h3><br>
+            <p>Your satisfaction is our top priority. We go the extra mile to exceed your expectation</p>
+          </div>
+        </div>
+        <div class="choose">         
+            <img src="{% static 'myapp/logo/24x7_icon-removebg-preview.svg' %}" alt="24 hours" class="choose-icon">
+            <div class="text">
+            <h3>24/7 Service</h3><br>
+            <p>Our technicians are available 24/7 to provide service to our customers.</p>
+            </div>
+        </div>
+        <div class="choose">
+          
+            <img src="{% static 'myapp/logo/affordable-pricing-icon-style-free-vector-removebg-preview.svg' %}" alt="affordable" class="choose-icon">
+          <div class="text">
+            <h3>Affordable Price</h3><br>
+            <p>Our services are affordable and we provide quality service to our customers.</p>
+          </div>
+        </div>
+    </div>
+    <div class="choose-img">
+        <img src="{% static 'myapp/images/mechanic.png' %}" alt="technician" class="why-image">
+    </div>
+</div>
+<div class="service-text">
+    {% if services %}
+    <h2>Services We Provide</h2>
+    {% else %}
+    <h2>No Services Available</h2>
+    {% endif %}
+    </div>
+    <div class="service-container">
+        {% for service in services %}
+            <div class="service-item">
+                <img src="{{ service.image.url }}" alt="{{ service.name }}">
+                <h3>
+                    <a href="{% url 'service_detail' service.id %}">{{ service.name }}</a>
+                </h3>
+            </div>
+            {% if forloop.counter|divisibleby:2 %} 
+                <div style="width: 100%;"></div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% include './footer.html' %}
+
+ 

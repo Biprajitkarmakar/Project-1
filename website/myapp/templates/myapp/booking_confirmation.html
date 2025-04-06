@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .container {
+        text-align: center;
+    }
+    
+    .confirmation-box {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+    }
+    
+    h2 {
+        color:rgb(8, 26, 112);
+    }
+    
+    p {
+        font-size: 16px;
+        color: #333;
+    }
+    
+    .confirm-btn {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: #0c33f4;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .confirm-btn:hover {
+        background-color: #ff2f2f;
+    }
+    
+    .home-btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #555;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    
+    .home-btn:hover {
+        background-color: #333;
+    }
+     
+</style>
+<body>
+    <div class="container">
+        <div class="confirmation-box">
+            <h2>Booking Confirmation</h2>
+            <p>Hello <strong>{{ booking.full_name }}</strong>,</p>
+            <p>Your booking for <strong>{{ booking.service_type }}</strong> on <strong>{{ booking.booking_date }}</strong> is ready for confirmation.</p>
+            <p>Please confirm your booking below:</p>
+
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit" class="confirm-btn">Confirm Booking</button>
+            </form>
+
+            <a href="{% url 'homepage' %}" class="home-btn">Go to Homepage</a>
+        </div>
+    </div>
+</body>
+</html>

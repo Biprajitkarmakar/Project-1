@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href={% static 'myapp/css/user.css' %}>
+</head>
+<body>
+    <div class="auth-container">
+        <form method="POST">
+        {% csrf_token %}    
+        <h2>Login</h2>   
+        {% for frm in form %}
+        <div class="input-group">
+            {{ frm.label }}
+            {{ frm }}
+        </div>
+        {% endfor %}
+            <button type="submit" class="auth-button">Login</button>
+        <div class="toggle-container">
+            <p><a href="{% url 'reset_password' %}">Forgot Password?</a></p>
+            <p>Don't have an account? <a href="{%url "signuppage"%}">Sign up</a></p>
+        </div>
+    </div>
+</form>
+{% if form.non_field_error %}
+{% for error in form.non_field_errors %}
+<p>{{ error }}</p>
+{% endfor %}
+{% endif %}
+</body>
+</html>

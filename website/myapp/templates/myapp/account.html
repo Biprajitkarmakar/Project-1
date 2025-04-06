@@ -1,0 +1,70 @@
+{% load static %}
+{%include './navbar.html'%}
+{% block link %}
+<link rel="stylesheet" href="{% static 'myapp/css/account.css' %}">
+{% endblock %}
+{% block title %}
+<title>Mr.Cool Account</title>
+{% endblock %}
+    
+<!-- Your Account  -->
+<section class="about-banner">
+    <div class="overlay">
+        <h1>Your Account</h1>
+        <p><a href="{%url "homepage"%}">Home</a> / <a href="{%url "accountpage"%}" class="active">Account</a></p>
+    </div>
+</section>    
+<!-- account info  -->
+<div class="container">
+    <h2>Account Information</h2>
+    <div class="info">
+        <label>Username:  </label>{{request.user.username}}
+    </div>
+    <div class="info">
+        <label>Name:  </label>{{request.user.first_name}} {{request.user.last_name}}
+    </div>
+    <div class="info">
+        <label>Email:  </label>{{request.user.email}}
+    </div>
+    <div class="info">
+        <label>Phone:  </label>{{request.user.mobile}}
+    </div>
+    <div class="info">
+        <label>Address:  </label>{{ request.user.city_town_village }} , {{ request.user.street_name }} , {{ request.user.pin_code }}
+    </div>
+
+    <input type="checkbox" id="toggle" style="display: none;">
+    <label for="toggle" class="show-button">Show Service History</label>
+
+    <div class="service-history">
+        <h3>Service History</h3>
+        <div style="overflow-x: auto;">
+            <table>
+                <tr>
+                    <th>Service</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+                {% for booking in bookings %}
+                <tr>
+                    <td>{{ booking.service_type }}</td>
+                    <td>{{ booking.booking_date }}</td>
+                    <td>{% if booking.confirmed %}Confirmed{% else %}Pending{% endif %}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan = "3"  style="text-align: center; font-weight: 550;">No Bookings Found</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+<!-- edit profile button  -->
+<a  class="edt-btn-a" href="{%url "editprofilepage"%}"><button class="edt-btn" type="submit">Edit Profile</button></a>
+
+<!-- logout button  -->
+<a  class="logout-btn-a" href="{%url "signoutpage"%}"><button class="logout-btn" type="submit">Logout</button></a>
+
+<!-- footer  -->
+{% include './footer.html' %}

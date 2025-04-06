@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"
+     content="width=device-width, initial-scale=1.0">
+    {% block title %}
+
+    {% endblock %}
+    
+    {% block link %}
+    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+    {% endblock %}
+    {% block script %}
+    <script src="https://kit.fontawesome.com/544c0a4acf.js" crossorigin="anonymous"></script>
+    {% endblock %}
+</head>
+<body>
+<!-- Navbar -->    
+    <nav class="nav">
+        <a href="{%url "homepage"%}"  class="nav-link">
+        <h1 class="name">
+            <img src="{% static 'myapp/images/Ac&fridge logo.jpg' %}" alt="icon" class="icon">
+            Mr.Cool
+        </h1>
+        </a>
+    <div class="collapse_navbar">
+        <div class="nav_content">
+            <a href="{%url "homepage"%}" class="nav_icon">Home</a>
+            <a href="{%url "aboutpage"%}"  class="nav_icon">About</a>
+            <a href="{%url "servicepage"%}"  class="nav_icon">Services</a>
+            <a href="{%url "accountpage"%}"  class="nav_icon">Account</a>
+        </div>
+        <div class="social_media">
+            <a href="https://www.facebook.com" class="social_link">
+                <img src="{% static 'myapp/logo/facebook-brands.svg' %}" alt="facebook" class="social_icon">
+            </a>
+            <a href="https://www.instagram.com" class="social_link">
+                <img src="{% static 'myapp/logo/instagram-brands.svg' %}" alt="instagram" class="social_icon">
+            </a>
+            <a href="https://www.twitter.com" class="social_link">
+                <img src="{% static 'myapp/logo/twitter-brands.svg'%}" alt="twitter" class="social_icon">
+            </a>
+            <a href="https://www.linkedln.com" class="social_link">
+                <img src="{% static 'myapp/logo/linkedin-brands.svg' %}" alt="Linkedln" class="social_icon">
+            </a>
+        </div>
+    </div>
+</nav >
+    <nav class="hidden_bar">
+        <a href="{%url "homepage"%}"  class="nav-link">
+            <h1 class="name">
+                <img src="{% static 'myapp/images/Ac&fridge logo.jpg' %}" alt="icon" class="icon">
+                Mr.Cool
+            </h1>
+            </a>
+    <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+        <ul class="menu">
+            <li><a href="{%url "homepage"%}" >Home</a></li>
+            <li><a href="{%url "aboutpage"%}">About</a></li>
+            <li><a href="{%url "servicepage"%}">Services</a></li>
+            <li><a href="{%url "accountpage"%}">Account</a></li>
+        </ul>
+</div>
+    </nav>
